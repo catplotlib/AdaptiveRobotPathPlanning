@@ -36,7 +36,7 @@ The project aims to develop a robust path-planning system for robots in dynamic 
 
 ## Empirical Results
 - **DQN**: -173.83 average reward, 0.07 success rate.
-https://github.com/catplotlib/AdaptiveRobotPathPlanning/blob/main/results/dqn%20(1).mov
+![img](https://github.com/catplotlib/AdaptiveRobotPathPlanning/blob/main/results/dqn%20(1).mov)
 - **PPO**: 35.67 average reward, 0.72 success rate.
 ![ppo](./results/ppo%20(1).mov)
 - **A2C**: 62.48 average reward, 0.
