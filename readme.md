@@ -27,6 +27,8 @@ The project aims to develop a robust path-planning system for robots in dynamic 
 - **Twin Delayed Deep Deterministic Policy Gradient (TD3)**: Improves learning stability in continuous action spaces.
 - **Proximal Policy Optimization (PPO)**: Balances simplicity, performance, and stability.
 
+
+
 ### Hyperparameter Comparison
 - **Learning Rate**: Affects convergence speed and learning stability.
 - **Clip Range**: Manages policy network updates in PPO.
@@ -34,9 +36,14 @@ The project aims to develop a robust path-planning system for robots in dynamic 
 
 ## Empirical Results
 - **DQN**: -173.83 average reward, 0.07 success rate.
+![dqn](./results/dqn%20(1).mov)
 - **PPO**: 35.67 average reward, 0.72 success rate.
-- **A2C**: 62.48 average reward, 0.86 success rate.
+![ppo](./results/ppo%20(1).mov)
+- **A2C**: 62.48 average reward, 0.
+![a2c](./results/a2c%20(1).mov)
+86 success rate.
 - **TD3**: 77.32 average reward, 0.91 success rate.
+![td3](./results/td3%20(1).mov)
 
 TD3 and A2C outperformed others, demonstrating their efficacy in dynamic environments.
 
