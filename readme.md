@@ -1,62 +1,57 @@
-# Adaptive Robot Path Planning (CS 4180/5180: Reinforcement Learning and Sequential Decision Making, Fall 2023)
+# Adaptive Robot Path Planning in Dynamic Environments
 
-## Project Overview
-The goal of this project is to develop a reinforcement learning model for navigating a robot through a dynamic environment with moving obstacles to reach a designated target point. The project explores the use of Q-Learning and Advantage Actor-Critic (A3C) algorithms for this task.
+## Introduction
+This project explores advanced robotics, focusing on adaptive path planning in dynamic environments. The goal is to create a robot capable of real-time navigation and decision-making in settings with constantly changing obstacles and environmental factors. The challenge is developing an algorithmic solution for intelligent path adaptation under unpredictable conditions. This is crucial for applications like disaster response and industrial automation.
 
-## Team Member
-- Puja Chaudhury
+## Problem Statement
+The project aims to develop a robust path-planning system for robots in dynamic environments using sophisticated models and algorithms that combine machine learning and spatial analysis.
 
-## Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Project Structure](#project-structure)
-4. [Datasets](#datasets)
-5. [Algorithms](#algorithms)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Acknowledgements](#acknowledgements)
+### Model Description
+- Integrates machine learning and spatial analysis to process sensory inputs and evaluate potential paths.
+- Inputs: Real-time sensory data providing spatial information about the environment.
+- Outputs: An evolving navigation path recalculated in response to sensory data.
 
-## Installation
+### Implementation
+- Implemented in Python using Gym, NumPy, and PyTorch.
+- `DynamicObstaclesEnv` and `DynamicObstaclesEnvCont` classes simulate dynamic environments.
+- Reinforcement learning models (DQN, PPO, A2C, and TD3) are trained with various hyperparameters.
 
-### Dependencies
-- ROS (Robot Operating System)
-- TensorFlow/PyTorch
-- Additional libraries and dependencies are listed in the `requirements.txt` file.
+## Simulator Description
+- Uses a custom-built environment, `DynamicObstaclesEnv`, with a grid setup.
+- Agent's Objective: Reach the goal while avoiding dynamically moving obstacles.
+- Sensory Inputs: Grid representation indicating position, goal location, and obstacles.
 
-### Setup
-Clone the repository to your local machine:
-```bash
-git clone https://github.com/your-username/adaptive-robot-path-planning.git
-cd adaptive-robot-path-planning
-```
-### Install the required dependencies:
-```
-pip install -r requirements.txt
-```
-## Usage
-Detailed instructions on how to run the simulation and train the models will be provided here.
+## Methods and Algorithms
+- **Q-Learning (Baseline)**: Establishes initial benchmarks; effective in discrete action spaces.
+- **Advantage Actor-Critic (A2C) (Advanced)**: Combines policy gradient and value-based methods; suitable for discrete and continuous action spaces.
+- **Twin Delayed Deep Deterministic Policy Gradient (TD3)**: Improves learning stability in continuous action spaces.
+- **Proximal Policy Optimization (PPO)**: Balances simplicity, performance, and stability.
 
-## Project Structure
-- `docs/`: Documentation for the project.
-- `src/`: Source code.
-- `data/`: Datasets and data generation scripts.
-- `tests/`: Testing scripts and unit tests.
-- `tools/`: Build, run, and utility scripts.
+### Hyperparameter Comparison
+- **Learning Rate**: Affects convergence speed and learning stability.
+- **Clip Range**: Manages policy network updates in PPO.
+- **Batch Size**: Influences stability and sample efficiency.
 
-## Datasets
-Information about the datasets used in this project, including how to obtain or generate them, will be provided here.
+## Empirical Results
+- **DQN**: -173.83 average reward, 0.07 success rate.
+- **PPO**: 35.67 average reward, 0.72 success rate.
+- **A2C**: 62.48 average reward, 0.86 success rate.
+- **TD3**: 77.32 average reward, 0.91 success rate.
 
-## Algorithms
-Details about the Q-Learning and A3C algorithms, as well as any other algorithms explored during the project.
+TD3 and A2C outperformed others, demonstrating their efficacy in dynamic environments.
 
-## Contributing
-Instructions for contributing to this project will be provided here.
+## Analysis of Results
+TD3's advanced architecture, including twin Q-networks and policy smoothing, helped it excel. A2C's dual approach in policy and value estimation was also effective. PPO provided stable learning updates, while DQN struggled in complex scenarios.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Discussion and Future Directions
+Future work includes testing in more complex environments, integrating diverse sensory inputs, and enhancing algorithm adaptability.
 
-## Acknowledgements
-Acknowledgements and references will be provided here.
+## Conclusions
+Advanced reinforcement learning algorithms, particularly TD3, are more capable in dynamic path planning than basic models like DQN.
 
+## References
+- Sutton, R. S., & Barto, A. G. (2018). Reinforcement Learning: An Introduction.
+- Lillicrap, T. P., et al. (2016). Continuous control with deep reinforcement learning.
 
-
+## Code Repository
+[Google Colab Notebook](https://colab.research.google.com/drive/1w68bknOtN7yfcaV9zxqgdhIp46tPC7m2?usp=sharing)
